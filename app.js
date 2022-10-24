@@ -15,12 +15,13 @@ db.on("error", (err)=>{
     console.log("mogodb error");
 })
 
+
 app.use(bodyParser.urlencoded({extented: true}))
 app.use(bodyParser.json())
 
 app.get("/", (req, res)=>{
     res.send("vazifa boshlandi")
-    
+
 })
 
 app.listen(port, ()=>{
