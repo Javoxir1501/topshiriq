@@ -4,3 +4,5 @@ const router = express.Router()
 router.get("/api/movies", (req, res)=>{
 
 })
+
+module.exports = router
