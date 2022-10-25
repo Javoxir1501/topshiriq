@@ -8,4 +8,16 @@ router.get("/api/movies", (req, res)=>{
     })
 })
 
+router.post("/api/movies", (req, res)=>{
+    const {title, category, country, year, director, imdb_score} = req.body
+    const db = new movieDb({
+        title: title,
+        category: category,
+        country: country,
+        year: year,
+        imdb_score: imdb_score
+    })
+    db.save()
+})
+
 module.exports = router
