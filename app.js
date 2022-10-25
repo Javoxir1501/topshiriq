@@ -3,6 +3,7 @@ const app = express()
 const port = 3030 || process.env.PORT
 const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
+const rIndex = require("./routers/index")
 
 mongoose.connect("mongodb://localhost:27017/Movies")
 const db = mongoose.connection
@@ -24,6 +25,8 @@ app.get("/", (req, res)=>{
     res.send("vazifa boshlandi")
 
 })
+
+app.use(rIndex)
 
 app.listen(port, ()=>{
     console.log("server running");
